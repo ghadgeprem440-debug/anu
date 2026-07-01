@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special for Anu Don 😎</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ffe5ec, #ffc2d1);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow-x: hidden;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 30px;
+            box-shadow: 0 15px 35px rgba(255, 71, 126, 0.15);
+            max-width: 550px;
+            width: 100%;
+            transition: all 0.5s ease;
+            border: 4px solid #fff0f3;
+            position: relative;
+        }
+
+        /* Cute decorative elements */
+        .card::before, .card::after {
+            content: '🌸';
+            position: absolute;
+            font-size: 1.5rem;
+        }
+        .card::before { top: 15px; left: 15px; }
+        .card::after { bottom: 15px; right: 15px; }
+
+        h1 {
+            color: #ff477e;
+            margin-bottom: 20px;
+            font-size: 2.2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+        }
+
+        p {
+            color: #4a4a4a;
+            font-size: 1.25rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            align-items: center;
+            min-height: 90px;
+            position: relative;
+        }
+
+        button {
+            padding: 14px 35px;
+            font-size: 1.15rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-weight: bold;
+        }
+
+        .btn-yes {
+            background: linear-gradient(135deg, #ff477e, #ff7096);
+            color: white;
+            box-shadow: 0 5px 15px rgba(255, 71, 126, 0.4);
+        }
+
+        .btn-yes:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 71, 126, 0.6);
+        }
+
+        .btn-no {
+            background-color: #ffb3c1;
+            color: #ff477e;
+        }
+
+        .step {
+            display: none;
+        }
+
+        .step.active {
+            display: block;
+            animation: fadeIn 0.6s ease-in-out;
+        }
+
+        .shayari {
+            font-style: italic;
+            font-size: 1.35rem;
+            color: #ff477e;
+            line-height: 1.8;
+            background: #fff0f3;
+            padding: 25px;
+            border-radius: 20px;
+            border: 2px dashed #ff7096;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        /* Royal & Cute Certificate Premium Styling */
+        .certificate-box {
+            background: #fffdf9;
+            border: 10px double #d4af37;
+            padding: 30px 20px;
+            border-radius: 15px;
+            margin-top: 25px;
+            box-shadow: inset 0 0 20px rgba(212, 175, 55, 0.1), 0 10px 20px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        .cert-title {
+            font-family: 'Georgia', serif;
+            color: #b38600;
+            font-size: 1.6rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .cert-body {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .cert-names {
+            font-size: 1.4rem;
+            color: #ff477e;
+            font-weight: bold;
+            margin: 15px 0;
+            font-style: italic;
+        }
+
+        .cert-footer {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 20px;
+            border-top: 1px solid #e0e0e0;
+            padding-top: 15px;
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        .gold-seal {
+            font-size: 2.5rem;
+            line-height: 1;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <!-- Step 1: Cute Opening & Jevlis Kay -->
+        <div id="step1" class="step active">
+            <h1>Hey, can I ask you something? ✨</h1>
+            <p style="font-size: 1.6rem; color: #ff477e; font-weight: bold; margin-bottom: 10px;">Jevlis kay re anu?? 🥺❤️</p>
+            <p style="font-size: 1rem; color: #888;">(Don la time var jevava lagta bhau!)</p>
+            <div class="btn-container">
+                <button class="btn-yes" onclick="nextStep(2)">Ho Jevle 😊</button>
+                <button class="btn-no" onclick="showWarning()">Naahi 😕</button>
+            </div>
+            <p id="warning-text" style="color: #e63946; margin-top: 20px; display: none; font-weight: bold; font-size: 1.2rem; background: #ffe3e3; padding: 10px; border-radius: 10px;"></p>
+        </div>
+
+        <!-- Step 2: Cute Marathi Shayari & Feedback -->
+        <div id="step2" class="step">
+            <h1>He Tula Sathi... 🌸👑</h1>
+            <div class="shayari">
+                "हसताना तुझ्या गाली, खळी पडू दे...<br>
+                तुझ्या चेहऱ्यावरचे हे हसू, कधीच न उडू दे...<br>
+                आहेस तू एकदम कडक, म्हणून सांगतोय Don,<br>
+                आपल्या या मैत्रीमध्ये, दुसरं येणार कोण!" 😉✨
+            </div>
+            <p>Me try kelay aasa first time tula aavadla kay?? 🙈</p>
+            <div class="btn-container">
+                <button class="btn-yes" onclick="nextStep(3)">Ho, Khup Mast! 😍</button>
+                <button class="btn-no" onclick="nextStep(3)">Thik thik aahe 😜</button>
+            </div>
+        </div>
+
+        <!-- Step 3: Buddy Question (The Trick Step) -->
+        <div id="step3" class="step">
+            <h1>Ek Last Goshtha... 🤔🔥</h1>
+            <p>Tu mala tujja friend buddy mantes kay ha ha??? 😎🤙</p>
+            <div class="btn-container" style="height: 160px;">
+                <button id="trick-yes" class="btn-yes" onclick="showFinal()">Yesss</button>
+                <button id="trick-no" class="btn-no" onmouseover="trickNo()" onclick="trickNo()">No</button>
+            </div>
+        </div>
+
+        <!-- Step 4: Final Message & Royal Certificate -->
+        <div id="step4" class="step">
+            <h1>Mala Mahiti Hota! 😍🙌</h1>
+            <p style="font-size: 1.2rem; color: #4a4a4a;">Mala mahiti hota tumhi doghe changle frnds aahat huhhh!! 😉💥</p>
+            <p style="font-size: 1.35rem; color: #ff477e; font-weight: bold; margin-bottom: 20px;">"You are my best buddy ever !! Love you as a buddy ❤️"</p>
+            
+            <!-- Shandaar Lifetime Bond Certificate -->
+            <div class="certificate-box">
+                <div class="cert-title">👑 Certificate of Lifetime Bond 👑</div>
+                <div class="cert-body">
+                    This official document certifies that
+                    <div class="cert-names">Anu Don & Prem</div>
+                    have established an everlasting and unbreakable bond of true friendship.
+                </div>
+                <div class="cert-footer">
+                    <div>
+                        <span style="font-weight:bold; color:#b38600;">🤝 Validity</span><br>Forever & Ever
+                    </div>
+                    <div class="gold-seal">🏆</div>
+                    <div>
+                        <span style="font-weight:bold; color:#b38600;">✨ Status</span><br>Locked for Life
+                    </div>
+                </div>
+            </div>
+
+            <p style="margin-top: 35px; font-weight: bold; color: #4a4a4a; font-size: 1.2rem;">
+                Free jhalis ki kar text, byeeee anu don!! 👋🔥
+            </p>
+        </div>
+    </div>
+
+    <script>
+        let yesSize = 1.1;
+
+        function nextStep(stepNumber) {
+            document.querySelectorAll('.step').forEach(step => step.classList.remove('active'));
+            document.getElementById('step' + stepNumber).classList.add('active');
+        }
+
+        function showWarning() {
+            const warning = document.getElementById('warning-text');
+            warning.innerText = "jevun ghe pahile !!! 😡👊";
+            warning.style.display = 'block';
+        }
+
+        function trickNo() {
+            const yesBtn = document.getElementById('trick-yes');
+            const noBtn = document.getElementById('trick-no');
+            
+            // Make Yes Button Bigger
+            yesSize += 0.3;
+            yesBtn.style.transform = `scale(${yesSize})`;
+            
+            // Move No Button Randomly to dodge
+            const x = Math.random() * 160 - 80;
+            const y = Math.random() * 100 - 50;
+            noBtn.style.transform = `translate(${x}px, ${y}px)`;
+        }
+
+        function showFinal() {
+            nextStep(4);
+        }
+    </script>
+</body>
+</html>
